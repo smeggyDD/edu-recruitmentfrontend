@@ -8,15 +8,15 @@ export default defineConfig({
   plugins: [react(), runtimeErrorOverlay(), themePlugin()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "client/src"),
-      "@shared": path.resolve(__dirname, "shared"),
+      "@": path.resolve(__dirname, "./src"),  // ✅ Correct alias
+      "@shared": path.resolve(__dirname, "./shared"),
     },
   },
   build: {
-    outDir: path.resolve(__dirname, "dist/public"),
+    outDir: path.resolve(__dirname, "dist"), // ✅ Netlify will use this
     emptyOutDir: true,
     rollupOptions: {
-      input: path.resolve(__dirname, "client/src/index.html"), // Ensure this path matches your project structure
+      input: path.resolve(__dirname, "./src/index.html"), // ✅ Corrected path!
     },
   },
   server: {
