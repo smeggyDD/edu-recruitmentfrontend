@@ -13,7 +13,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: path.resolve(__dirname, "dist"), // ✅ Netlify will use this
+    outDir: path.resolve(__dirname, "dist/public"), // ✅ Netlify will use this
     emptyOutDir: true,
     rollupOptions: {
       input: path.resolve(__dirname, "./src/index.html"), // ✅ Corrected path!
